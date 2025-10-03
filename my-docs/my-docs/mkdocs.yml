@@ -1,0 +1,50 @@
+site_name: IddirNet API Documentation
+site_url: https://your-site.com  # Optional: Replace with your deployed URL
+site_description: Technical documentation for the IddirNet RESTful API.
+site_author: Your Name or Team
+
+theme:
+  name: material  # Recommended: Install with `pip install mkdocs-material` for a modern look
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to light mode
+  features:
+    - content.code.copy
+    - navigation.indexes
+    - navigation.tabs
+    - navigation.top
+
+nav:
+  - Home: index.md
+  - System Architecture: architecture.md
+  - ERD: erd.md
+  - Integrations: integrations.md
+  - API Reference: api.md
+
+plugins:
+  - search  # Built-in, enables site search
+
+markdown_extensions:
+  - pymdownx.highlight  # Syntax highlighting for code blocks
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed: {}  # Tabs for content
+  - admonition  # Callouts like notes/warnings
+  - pymdownx.details  # Expandable sections
+
+extra:
+  version:
+    provider: mike  # Optional: For versioned docs (install mike plugin)
